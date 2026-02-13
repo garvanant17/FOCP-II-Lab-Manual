@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int digitsSum(int n);
+int digitsSum(int n){
+    int total=0;
+    int digits;
+    if (n == 0)
+    return 0;
+    return(n%10)+    (digitsSum(n/10));
+}
+int main(){
+    int n;
+    cout<<"enter an integer n: ";
+    cin>>n;
+    int result = digitsSum(n);
+    cout<<"sum of digits of integer: "<<result;
+}
