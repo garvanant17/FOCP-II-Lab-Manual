@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+double calculateEMI(double P, double R, int T);
+double calculateEMI(double P, double R = 0.01, int T=12){
+    double time = pow(1+R,T);
+    double EMI1 = P*R*time;
+    double EMI2 = time - 1;
+    double FinalEmi = EMI1/EMI2;
+    return FinalEmi;
+}
+int main(){
+    double P,R;
+    int T;
+    cout<<"principal amount: ";
+    cin>>P;
+    cout<<"interest rate: ";
+    cin>>R;
+    cout<<"Tenure(months): ";
+    cin>>T;
+    double result = calculateEMI(P,R,T);
+    cout<<"EMI: "<<fixed<<setprecision(2)<<result;
+
+}
