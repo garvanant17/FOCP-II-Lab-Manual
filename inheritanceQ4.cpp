@@ -1,38 +1,29 @@
+//Q4
 #include <iostream>
 using namespace std;
-class Academic{
-    public:
-int marks;
-Academic(){
-    marks = 0;
-}
-Academic(int marks){
-this -> marks = marks;
-}
-};
-class Sports{
-    public:
-    int score;
-    Sports(){
-        score = 0;
-    }
-    Sports(int score){
-        this -> score = score;
-    }
-};
-class Result:public Academic, public Sports{
-    public:
-Result(int m, int s):Academic(m), Sports(s){
+class Employee{
+    protected:
+string employee_name;
 
+Employee(string employee_name){
+this -> employee_name = employee_name;
 }
-void displayResult(){
-    cout<<"-----RESULT-----";
-    cout<<"\nmarks = "<<marks;
-    cout<<"\nscore = "<<score;
-    cout<<"\ntotal = "<<(score+marks);
+
+};
+
+class Department{
+    protected:
+string department_name;
+
+Department(string dep){
+    department_name = dep;
 }
 };
-int main(){
-    Result r1(50,70);
-    r1.displayResult();
-}
+class Manager: public Employee, public Department{
+    public:
+    Manager(string emp, string dept):Employee(emp), Department(dept){}
+    void display(){
+        cout<<"employee name: "<<employee_name<<endl;
+        cout<<"employee department: "<<department_name;
+    }
+};
