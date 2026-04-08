@@ -27,3 +27,7 @@ class Manager: public Employee, public Department{
         cout<<"employee department: "<<department_name;
     }
 };
+int main(){
+    Manager m2("garv", "btech");
+    m2.display();
+}
