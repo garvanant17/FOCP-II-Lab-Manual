@@ -1,12 +1,4 @@
 //Q7
-int main(){
-    Laptop l1;
-    cout<<"laptop:"<<endl;
-    l1.carry();
-    l1.powerOn();
-    l1.process();
-}
-
 #include <iostream>
 using namespace std;
 class Shape{
